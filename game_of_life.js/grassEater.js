@@ -1,5 +1,5 @@
 
-class GrassEater extends LivingCreature{
+class GrassEater{
     constructor(x, y) {
         super(x,y);
         this.energy = 11;
@@ -16,7 +16,6 @@ class GrassEater extends LivingCreature{
             var newX = newCell[0];
             var newY = newCell[1];
             matrix[newY][newX] = 2;
-
             var newGrass = new GrassEater(newX, newY);
             grassEaterArr.push(newGrass);
             this.multiply = 0;
