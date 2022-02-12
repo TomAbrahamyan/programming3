@@ -91,17 +91,17 @@ function setup() {
             if (matrix[y][x] == 3) {
                 var pre = new Predator(x, y);
                 predatorArr.push(pre);
-                
+
             }
             if (matrix[y][x] == 4) {
                 var trap = new Trap(x, y);
                 trapArr.push(trap);
-                
+
             }
             if (matrix[y][x] == 5) {
                 var vampire = new Vampire(x, y);
                 vampireArr.push(vampire);
-                
+
             }
         }
     }
@@ -141,13 +141,13 @@ function draw() {
         grassEaterArr[i].mul();
         grassEaterArr[i].eat();
     }
-    
+
 
     for (var i in predatorArr) {
         predatorArr[i].mul();
         predatorArr[i].eat();
     }
-    
+
     for (var i in trapArr) {
         trapArr[i].eat();
     }
