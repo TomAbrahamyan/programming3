@@ -17,7 +17,8 @@ function nkarel(matrix) {
         for (var x = 0; x < matrix[y].length; x++) {
 
             if (matrix[y][x] == 1) {
-                fill("green");
+             fill("green");
+               
             }
             else if (matrix[y][x] == 0) {
                 fill("#acacac");
@@ -37,15 +38,30 @@ function nkarel(matrix) {
 
 }
 
+
+socket.on('send matrix', nkarel);
+
+
 function addGrass(){
     socket.emit("add Grass");
 }
 
+function addGrassEater(){
+    socket.emit("add grassEater");
+}
 
+function addPredator(){
+    socket.emit("add Predator");
+}
 
-    socket.on('send matrix', nkarel)
+function addTrap(){
+    socket.emit("add Trap");
+}
 
+function addVampire(){
+    socket.emit("add Vampire");
+}
 
-
-
-
+function kill(){
+    socket.emit("kill");
+}

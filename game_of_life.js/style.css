@@ -16,7 +16,7 @@ body{
 
 #control-panel{
     width:auto;
-    min-height: 380px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -62,6 +62,11 @@ body{
 #addVampire{
     background: #343A40;
     color:#fff;
+}
+
+#kill{
+    background: #cadf9a;
+    color:rgb(0, 0, 0);
 }
 
 #defaultCanvas0,#control-panel{    
