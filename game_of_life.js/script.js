@@ -2,11 +2,6 @@ var socket = io();
 
 side = 15;
 
-const addGrass = document.querySelector("#addGrass"),
-      addGrassEater = document.querySelector("#addGrassEater"),
-      addPredator = document.querySelector("#addPredator"),
-      addTrap = document.querySelector("#addTrap"),
-      addVampire = document.querySelector("#addVampire");
 
 
 function setup() {
@@ -41,6 +36,11 @@ function nkarel(matrix) {
     }
 
 }
+
+function addGrass(){
+    socket.emit("add Grass");
+}
+
 
 
     socket.on('send matrix', nkarel)

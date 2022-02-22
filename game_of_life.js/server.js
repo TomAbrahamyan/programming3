@@ -20,7 +20,7 @@ server.listen(3000, () => {
 
 
 function generator(matLen, gr, grEat, pred, trap, vampire) {
-   var matrix = [];
+    var matrix = [];
     for (let i = 0; i < matLen; i++) {
         matrix[i] = [];
         for (let j = 0; j < matLen; j++) {
@@ -124,7 +124,7 @@ function createObject() {
 
 
 
-function characterFunctions(){
+function characterFunctions() {
 
     for (var i in grassArr) {
         grassArr[i].mul();
@@ -153,6 +153,29 @@ function characterFunctions(){
 
     io.sockets.emit("send matrix", matrix);
 }
+
+
+
+io.sockets.on("add Grass", () => {
+    for (var i = 0; i < 7; i++) {
+        var x = Math.floor(Math.random() * matrix[0].length);
+        var y = Math.floor(Math.random() * matrix.length);
+        if (matrix[y][x] == 0) {
+            matrix[y][x] = 1;
+            var gr = new Grass(x, y);
+            grassArr.push(gr);
+        }
+    }
+    io.sockets.emit("send matrix", matrix);
+})
+
+
+
+
+
+
+
+
 
 
 setInterval(characterFunctions, 500)
