@@ -1,5 +1,7 @@
+let LivingCreature = require('./LivingCreature')
 
-class GrassEater extends LivingCreature{
+
+module.exports = class GrassEater extends LivingCreature{
     constructor(x, y) {
         super(x,y);
         this.energy = 11;
@@ -9,8 +11,8 @@ class GrassEater extends LivingCreature{
 
     mul() {
         this.multiply++;
-        var emptyCells = this.chooseCell(0);
-        var newCell = random(emptyCells);
+        var emptyCells = super.chooseCell(0);
+        var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
 
         if (newCell && this.multiply >= 12) {
             var newX = newCell[0];
@@ -23,9 +25,9 @@ class GrassEater extends LivingCreature{
     }
 
     move() {
-        this.energy--
-        var emptyCells = this.chooseCell(0)
-        var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
+       
+        var emptyCells = super.chooseCell(0)
+        var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
 
         if (newCell && this.energy >= 0) {
             var newX = newCell[0]
@@ -35,18 +37,18 @@ class GrassEater extends LivingCreature{
             this.x = newX
             this.y = newY
         }
-        else {
-            if (this.energy < 0) {
-                this.die()
-            }
+        this.energy--
+         if (this.energy <= 0) {
+            this.die()
         }
+        
     }
 
     eat() {
-        var emptyCells = this.chooseCell(1)
+        var emptyCells = super.chooseCell(1)
         var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
 
-        var emptyCells1 = this.chooseCell(5)
+        var emptyCells1 = super.chooseCell(5)
         var newCell1 = emptyCells1[Math.floor(Math.random() * emptyCells.length)]
 
 

@@ -1,5 +1,7 @@
+let LivingCreature = require('./LivingCreature')
 
-class Trap extends LivingCreature{
+
+module.exports = class Trap extends LivingCreature{
     constructor(x, y) {
         super(x,y);
         this.energy = 10;
@@ -8,13 +10,13 @@ class Trap extends LivingCreature{
 
 
     eat() {
-        var emptyCells = this.chooseCell(2)
+        var emptyCells = super.chooseCell(2)
         var newCell = emptyCells[Math.floor(Math.random() * emptyCells.length)]
 
-        var emptyCells1 = this.chooseCell(3)
+        var emptyCells1 = super.chooseCell(3)
         var newCell1 = emptyCells1[Math.floor(Math.random() * emptyCells.length)]
 
-        var emptyCells2 = this.chooseCell(5)
+        var emptyCells2 = super.chooseCell(5)
         var newCell2 = emptyCells2[Math.floor(Math.random() * emptyCells.length)]
 
        
