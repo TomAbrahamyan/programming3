@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    z-index: 111;
 }
 
 body{
@@ -16,7 +17,7 @@ body{
 
 #control-panel{
     width:auto;
-    min-height: 400px;
+    min-height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;

@@ -15,10 +15,8 @@ function nkarel(matrix) {
 
     for (var y = 0; y < matrix.length; y++) {
         for (var x = 0; x < matrix[y].length; x++) {
-
             if (matrix[y][x] == 1) {
-             fill("green");
-               
+               fill("green");
             }
             else if (matrix[y][x] == 0) {
                 fill("#acacac");

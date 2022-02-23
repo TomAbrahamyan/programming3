@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 
 
 server.listen(3000, () => {
-    console.log('connected');
+    console.log("Server successfully connected on 3000 port");
 });
 
 // Matrix Generator
@@ -239,8 +239,6 @@ function kill() {
 
 io.on('connection', function (socket) {
     createObject();
-    // socket.on("kill", kill);
-   
     socket.on("add Grass", addGrass);
     socket.on("add grassEater", addGrassEater);
     socket.on("add Predator", addPredator);
