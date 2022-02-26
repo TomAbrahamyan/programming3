@@ -8,10 +8,20 @@
     <title>Game of Life</title>
     <script src="socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <h1 data-text="Game Of Life"><span>Game Of Life</span></h1>
+
+    <div id="header">
+        <button id="winter" onclick="winter()">Winter</button>
+        <button id="spring" onclick="spring()">Spring</button>
+        <button id="summer" onclick="summer()">Summer</button>
+        <button id="autumn" onclick="autumn()">Autumn</button>
+    </div>
 
 
     <div id="control-panel">
@@ -22,9 +32,9 @@
         <button id="addVampire" onclick="addVampire()">Add Vampire</button>
         <button id="kill" onclick="kill()">Kill</button>
     </div>
-   
-    <script src="script.js"></script>
-    
+
+
+
 </body>
 
 </html>
