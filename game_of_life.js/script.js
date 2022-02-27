@@ -1,12 +1,13 @@
 var socket = io();
 side = 20;
 
+
 function setup() {
     frameRate(5);
+    music();
     createCanvas(30 * side, 30 * side);
     background('#acacac');
 }
-
 
 
 weath = 'summer';
@@ -16,11 +17,11 @@ function winter() {
 }
 function spring() {
     weath = 'spring';
-  
+
 }
 function summer() {
     weath = 'summer';
-    
+
 }
 function autumn() {
     weath = 'autumn';
@@ -40,41 +41,41 @@ function nkarel(matrix) {
                 if (weath == "winter") {
                     fill("white");
                     rect(x * side, y * side, side, side);
-                     text('🌿', x * side, y * side + toBot);
-                    setInterval(() => { weath = "spring" }, 80000);
+                    text('🌿', x * side, y * side + toBot);
+                    // setInterval(() => { weath = "spring" }, 80000);
                 } else if (weath == "spring") {
                     fill("yellowgreen");
                     rect(x * side, y * side, side, side);
-                text('🌿', x * side, y * side + toBot);
-                    setInterval(() => { weath = "summer" }, 80000);
+                    text('🌿', x * side, y * side + toBot);
+                    // setInterval(() => { weath = "summer" }, 80000);
                 } else if (weath == "summer") {
                     fill("green");
                     rect(x * side, y * side, side, side);
                     text('🌿', x * side, y * side + toBot);
-                    setInterval(() => { weath = "autumn" }, 80000);
+                    // setInterval(() => { weath = "autumn" }, 80000);
                 } else if (weath == "autumn") {
                     fill("#FED32A");
                     rect(x * side, y * side, side, side);
                     text('🌾', x * side, y * side + toBot);
-                    setInterval(() => { weath = "winter" }, 80000);
+                    // setInterval(() => { weath = "winter" }, 80000);
                 }
-                
+
             }
             else if (matrix[y][x] == 0) {
-                if (weath == 'winter'){
+                if (weath == 'winter') {
                     fill("#00f5e4");
                 }
-                else if(weath == 'spring'){
+                else if (weath == 'spring') {
                     fill("#fff799");
                 }
-                else if(weath == 'summer'){
+                else if (weath == 'summer') {
                     fill("#FCF6B1");
                 }
-                else if(weath == 'autumn'){
+                else if (weath == 'autumn') {
                     fill("#fffaba");
                 }
                 rect(x * side, y * side, side, side);
-            
+
             } else if (matrix[y][x] == 2) {
                 fill("yellow");
                 rect(x * side, y * side, side, side);
@@ -125,3 +126,31 @@ function addVampire() {
 function kill() {
     socket.emit("kill");
 }
+
+
+//////// music 
+
+
+function music() {
+
+    const sound = document.querySelector("#sound");
+    const music = document.querySelector("#music");
+    const musicIcon = document.querySelector("#musicIcon");
+
+    music.src = "music/gameMusic.mp3";
+
+    sound.addEventListener("click", () => {
+        if (music.paused == false) {
+            music.pause();
+            musicIcon.classList.remove("fa-volume-high");
+            musicIcon.classList.add("fa-volume-xmark");
+        }
+        else {
+            music.play();
+            musicIcon.classList.remove("fa-volume-xmark");
+            musicIcon.classList.add("fa-volume-high");
+        }
+    })
+
+}
+

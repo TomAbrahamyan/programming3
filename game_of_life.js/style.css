@@ -29,8 +29,7 @@ h1{
 #header{
     min-width: 935px;
     position: absolute;
-    left:calc(100%-50%);
-    top:4%;
+    top:70px;
     margin: 100px 0;
     justify-self: center;
     align-self: start;
@@ -127,26 +126,48 @@ h1{
     color:rgb(0, 0, 0);
 }
 
-#defaultCanvas0,#control-panel{    
-   margin-top: 25%;
- 
+#defaultCanvas0,#control-panel,#settings{  
+   position: absolute;  
+   top:400px;
 } 
+#control-panel{ 
+    left:9%;
+}
+#defaultCanvas0{
+    right:calc(50%-20%);
+}
+
+#settings{
+    right: 17%;
+    width: 60px;
+    min-height: 200px;
+    background: #1da9cc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+}
+
+#settings > button{
+    width: 100%;
+    height: 60px;
+    border: none;
+    background: none;
+
+}
+#settings > button> h1{
+    position: static;   cursor: pointer;
+}
 
 
 
 
+/* title animate */
 
 
-
-
-/* h1 animate */
-
-
-h1 {
-    position: absolute;
-    top:5%;
-    left:calc(100%-50%);
-    color:#fff;
+#title {
+    margin-top: 70px;
     text-align: center;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: calc(20px + 5vw);
@@ -161,7 +182,7 @@ h1 {
     animation: shake 2.5s linear forwards;
 }
 
-h1 span {
+#title span {
     position: absolute;
     top: 0;
     left: 0;
@@ -170,21 +191,21 @@ h1 span {
             clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
 }
 
-h1::before,
-h1::after {
+#title::before,
+#title::after {
     content: attr(data-text);
     position: absolute;
     top: 0;
     left: 0;
 }
 
-h1::before {
+#title::before {
     animation: crack1 2.5s linear forwards;
     -webkit-clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
             clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
 }
 
-h1::after {
+#title::after {
     animation: crack2 2.5s linear forwards;
     -webkit-clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
             clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);

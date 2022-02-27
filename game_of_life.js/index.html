@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game of Life</title>
-    <script src="socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
-    <script src="script.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1 data-text="Game Of Life"><span>Game Of Life</span></h1>
+    <h1 id="title" data-text="Game Of Life"><span>Game Of Life</span></h1>
 
     <div id="header">
         <button id="winter" onclick="winter()">Winter</button>
@@ -33,8 +33,21 @@
         <button id="kill" onclick="kill()">Kill</button>
     </div>
 
+    <div id="settings">
+        <button id="sound">
+            <h1>
+                <i id="musicIcon" class="fa-solid fa-volume-xmark"></i>
+                <audio id="music" src=""></audio>
+            </h1>
+        </button>
+        <button id="info">
+            <h1>
+                <i class="fa-solid fa-circle-info"></i>
+            </h1>
+        </button>
+    </div>
 
-
+    <script src="script.js"></script>
 </body>
 
 </html>
