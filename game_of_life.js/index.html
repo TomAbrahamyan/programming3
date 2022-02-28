@@ -8,8 +8,12 @@
     <title>Game of Life</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.14/p5.js"></script>
     <script src="socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
 </head>
 
 <body>
@@ -40,11 +44,54 @@
                 <audio id="music" src=""></audio>
             </h1>
         </button>
-        <button id="info">
+        <button id="infoIcon">
             <h1>
                 <i class="fa-solid fa-circle-info"></i>
             </h1>
         </button>
+    </div>
+
+    <div id="info">
+        <button id="close-info"><i class="fa-solid fa-xmark"></i></button>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <h1 style="color:red; z-index: 1111;">About the Characters</h1>
+                <table>
+                    <tr>
+                      <th>Character</th>
+                      <th>Function</th>
+                    </tr>
+                    <tr>
+                      <td>Grass 🌿</td>
+                      <td>grows in empty cages and multiplies</td>
+                    </tr>
+                    <tr>
+                        <td>GrassEater 🐇</td>
+                        <td>eats grass</td>
+                    </tr>
+                    <tr>
+                        <td>Predator 🐆</td>
+                        <td>eats grassEater</td>
+                    </tr>
+                    <tr>
+                        <td>Trap 🟥</td>
+                        <td>still character, destroys grassEaters and predators in its cages</td>
+                    </tr>
+                    <tr>
+                        <td>Vampire 👾</td>
+                        <td>an character that simply walks in cages, eating it reduces the energy of others</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+              <div class="swiper-slide">
+                <h1 style="color:red; z-index: 1111;">Game State</h1>
+                <canvas id="myChart"></canvas>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>

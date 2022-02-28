@@ -2,11 +2,50 @@ var socket = io();
 side = 20;
 
 
+
+
 function setup() {
     frameRate(5);
     music();
     createCanvas(30 * side, 30 * side);
     background('#acacac');
+    
+    
+    const labels = [
+        'Grass',
+        'GrassEater',
+        'Predator',
+        'Trap',
+        'Vampire'
+    ];
+
+
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: ' ',
+            backgroundColor: ["green", "yellow", "orange", "red", "black"],
+            borderColor: 'rgb(255, 99, 132)',
+            hoverOffset: 4,
+            data: [70,70,70,70,70],
+        }]
+    };
+
+    socket.on("send state", (count)=> {
+        myChart.data.datasets[0].data = [count.grass,count.grassEater,count.predator,count.trap,count.vampire];
+        myChart.update();
+    })
+
+    const config = {
+        type: 'doughnut',
+        data: data,
+    }
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
 }
 
 
@@ -154,3 +193,30 @@ function music() {
 
 }
 
+///////  game info
+
+// slider
+function infoGame() {
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+
+    const info = document.querySelector("#info");
+    const infoIcon = document.querySelector("#infoIcon");
+    const closeInfo = document.querySelector("#close-info");
+
+    
+    infoIcon.addEventListener("click", () => {
+        info.style.display = "block";
+    });
+    closeInfo.addEventListener("click", () => {
+        info.style.display = "none";
+    });
+
+}
+
+infoGame();

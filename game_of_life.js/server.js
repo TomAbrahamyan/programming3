@@ -68,7 +68,7 @@ function generator(matLen, gr, grEat, pred, trap, vampire) {
 
 
 
-matrix = generator(30, 5, 15, 7, 3, 7);
+matrix = generator(30, 6, 20, 5, 3, 12);
 
 io.sockets.emit('send matrix', matrix);
 
@@ -233,6 +233,26 @@ function kill() {
     }
     io.sockets.emit("send matrix", matrix);
 }
+
+
+function gameStat() {
+    count = {
+        grass: grassArr.length,
+        grassEater: grassEaterArr.length,
+        predator: predatorArr.length,
+        trap: trapArr.length,
+        vampire: vampireArr.length
+    }
+    fs.writeFile("statistics.json", JSON.stringify(count), ()=>{
+        io.sockets.emit("send state", count)
+    })
+
+}
+setInterval(gameStat, 300);
+
+
+
+
 
 
 
