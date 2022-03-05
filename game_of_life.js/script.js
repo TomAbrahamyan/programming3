@@ -81,22 +81,22 @@ function nkarel(matrix) {
                     fill("white");
                     rect(x * side, y * side, side, side);
                     text('🌿', x * side, y * side + toBot);
-                    // setInterval(() => { weath = "spring" }, 80000);
+                    //setInterval(() => { weath = "spring" }, 8000);
                 } else if (weath == "spring") {
                     fill("yellowgreen");
                     rect(x * side, y * side, side, side);
                     text('🌿', x * side, y * side + toBot);
-                    // setInterval(() => { weath = "summer" }, 80000);
+                    //setInterval(() => { weath = "summer" }, 8000);
                 } else if (weath == "summer") {
                     fill("green");
                     rect(x * side, y * side, side, side);
                     text('🌿', x * side, y * side + toBot);
-                    // setInterval(() => { weath = "autumn" }, 80000);
+                    //setInterval(() => { weath = "autumn" }, 8000);
                 } else if (weath == "autumn") {
                     fill("#FED32A");
                     rect(x * side, y * side, side, side);
                     text('🌾', x * side, y * side + toBot);
-                    // setInterval(() => { weath = "winter" }, 80000);
+                    //setInterval(() => { weath = "winter" }, 8000);
                 }
 
             }
